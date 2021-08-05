@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { IconWrapper, LineWrapper } from './Point/styles';
+import { IconWrapper, LineWrapper, Tooltip } from './Point/styles';
 
 export const Wrapper = styled.div`
   max-width: 1024px;
@@ -7,9 +7,13 @@ export const Wrapper = styled.div`
   padding: 200px 30px;
   display: flex;
   justify-content: space-around;
-`;
 
-export const BoxWrapper = styled.div``;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    padding: 30px 200px;
+    min-height: 1024px;
+  }
+`;
 
 export const Box = styled.div`
   height: 30px;
@@ -24,6 +28,16 @@ export const Box = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   flex-grow: 1;
+
+  @media (max-width: 600px) {
+    width: 30px;
+    height: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+    margin: 2px auto;
+  }
   
   :hover {
     flex-grow: 2;
@@ -32,18 +46,50 @@ export const Box = styled.div`
   :nth-child(odd) {
     & > p {
       bottom: -30px;
+
+      @media (max-width: 600px) {
+        bottom: auto;
+        left: 50px;
+      }
     }
 
     & ${LineWrapper} {
-      bottom: 5px;
+      bottom: 8px;
       top: auto;
       flex-direction: column-reverse;
+     
+      @media (max-width: 600px) {
+        bottom: -58px;
+        top: auto;
+        left: -87px;
+      }
     }
   }
   
   :nth-child(even) {
     & > p {
       top: -30px;
+
+      @media (max-width: 600px) {
+        bottom: 42%;
+        top: auto;
+        right: 50px;
+      }
+    }
+
+    & ${Tooltip} {
+      top: 140px;
+      bottom: auto;
+
+      @media (max-width: 600px) {
+        top: 20px;
+        left: 134px;
+      }
+      
+      ::after {
+        bottom: 100%;
+        top: auto;
+      }
     }
   }
   
@@ -55,7 +101,6 @@ export const Box = styled.div`
       & ${IconWrapper} {
         background-color: #5C30E7;
       }
-    
   }
   
   :nth-child(6n - 4) {
@@ -105,9 +150,6 @@ export const Box = styled.div`
       background-color: #B72BFE;
     }
   }
-
-
-
 `;
 
 export const Date = styled.p`
@@ -116,4 +158,8 @@ export const Date = styled.p`
   text-align: center;
   font-size: 2.6rem;
   font-weight: 500;
+  
+  @media (max-width: 600px) {
+    transform: rotate(90deg);
+  }
 `;

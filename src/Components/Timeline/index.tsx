@@ -6,7 +6,6 @@ import { sortTimelineByYear } from './utils';
 import Point from './Point';
 
 const Timeline = () => {
-
   const [events, setEvents] = useState<SortedTimelineProps[]>([]);
 
   useEffect(() => {
