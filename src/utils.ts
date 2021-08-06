@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { RefObject, useEffect } from 'react';
 
-export const useOnClickOutside = (ref: any, handler: any) => {
+export const useOnClickOutside = (ref: RefObject<HTMLInputElement>, handler: (e: any) => void) => {
   useEffect(
     () => {
       const listener = (e: any) => {

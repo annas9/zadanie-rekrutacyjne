@@ -77,7 +77,6 @@ export const IconWrapper = styled.div<IconWrapperProps>`
     animation: pulse-blue 2s infinite;  
   }
   
-  
   @keyframes pulse-blue {
     0% {
       transform: scale(0.95);
