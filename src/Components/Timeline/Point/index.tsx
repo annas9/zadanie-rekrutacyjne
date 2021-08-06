@@ -8,7 +8,7 @@ interface PointProps {
 }
 
 const Point = ({ event }: PointProps) => {
-  const ref = useRef();
+  const ref = useRef<HTMLInputElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const handleIsOpen = () => setIsOpen(!isOpen);
 
@@ -16,7 +16,7 @@ const Point = ({ event }: PointProps) => {
 
   return (
     <Wrapper>
-      <Ring>
+        <Ring />
         <LineWrapper>
           <Line />
             <IconWrapper ref={ref} onClick={handleIsOpen}>
@@ -30,7 +30,6 @@ const Point = ({ event }: PointProps) => {
             {event.description}
           </Tooltip>
         </TooltipWrapper>
-      </Ring>
     </Wrapper>
   );
 };

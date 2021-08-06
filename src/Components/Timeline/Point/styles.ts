@@ -1,17 +1,22 @@
 import styled from 'styled-components';
+import { RefObject } from 'react';
 
 interface TooltipProps {
   isOpen?: boolean;
-  onClick?: any;
+  onClick?: () => void;
 }
 
 interface IconWrapperProps {
-  ref?: any;
-  onClick?: any;
+  ref?: RefObject<HTMLInputElement>;
+  onClick?: () => void;
 }
 
 export const Wrapper = styled.div`
   padding: 10px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
 `;
 
 export const Ring = styled.div`
@@ -20,24 +25,32 @@ export const Ring = styled.div`
   background-color: transparent;
   border-radius: 100%;
   border: 2px solid #000;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+`;
+
+export const Box = styled.div`
+  width: 100%;
   position: relative;
 `;
 
 export const LineWrapper = styled.div`
   position: absolute;
-  top: 8px;
-  padding: 0 24px;
-  left: -21px;
+  top: 20px;
+  left: 0;
   right: 0;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (max-width: 600px) {
     transform: rotate(270deg);
-    bottom: -58px;
+    bottom: -56px;
     top: auto;
-    left: 43px;
+    left: 49px;
     padding: 0 0;
     width: 50px;
   }
@@ -59,6 +72,28 @@ export const IconWrapper = styled.div<IconWrapperProps>`
   justify-content: center;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   cursor: pointer;
+  
+  :hover {
+    animation: pulse-blue 2s infinite;  
+  }
+  
+  
+  @keyframes pulse-blue {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(135, 144, 148, 0.7);
+    }
+
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(135, 144, 148, 0);
+    }
+
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(135, 144, 148, 0);
+    }
+  }
 `;
 
 export const Icon = styled.img`
@@ -69,7 +104,7 @@ export const Icon = styled.img`
   }
 `;
 
-export const Tooltip = styled.span<TooltipProps>`
+export const Tooltip = styled.div<TooltipProps>`
   visibility: ${({ isOpen }) => isOpen ? 'visible' : 'hidden'};
   width: 130px;
   background-color: #808080;
@@ -80,13 +115,28 @@ export const Tooltip = styled.span<TooltipProps>`
   position: absolute;
   z-index: 1;
   bottom: 140px;
-  left: -56px;
+  left: -64px;
   line-height: 1.2;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  ${({ isOpen }) => isOpen && `animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both`};
+
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
 
   @media (max-width: 600px) {
-    top: 20px;
-    left: -260px;
+    top: 38px;
+    left: -205px;
     bottom: auto;
+    font-size: 14px;
+    width: 172px;
   }
 `;
 
@@ -95,8 +145,10 @@ export const Title = styled.p`
   font-weight: 500;
   border-bottom: 1px solid #fff;
   margin-bottom: 2px;
+  font-size: 12px;
 `;
 
 export const TooltipWrapper = styled.div`
   position: relative;
+  font-size: 10px;
 `;

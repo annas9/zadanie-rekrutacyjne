@@ -4,13 +4,13 @@ import { IconWrapper, LineWrapper, Tooltip } from './Point/styles';
 export const Wrapper = styled.div`
   max-width: 1024px;
   margin: auto;
-  padding: 200px 30px;
+  padding: 250px 30px;
   display: flex;
   justify-content: space-around;
 
   @media (max-width: 600px) {
     flex-direction: column;
-    padding: 30px 200px;
+    padding: 30px 250px;
     min-height: 1024px;
   }
 `;
@@ -41,7 +41,7 @@ export const Box = styled.div`
   
   :hover {
     flex-grow: 2;
-  }
+    }
   
   :nth-child(odd) {
     & > p {
@@ -59,9 +59,9 @@ export const Box = styled.div`
       flex-direction: column-reverse;
      
       @media (max-width: 600px) {
-        bottom: -58px;
+        bottom: -55px;
         top: auto;
-        left: -87px;
+        left: -130px;
       }
     }
   }
@@ -80,10 +80,11 @@ export const Box = styled.div`
     & ${Tooltip} {
       top: 140px;
       bottom: auto;
+      left: -64px;
 
       @media (max-width: 600px) {
-        top: 20px;
-        left: 134px;
+        top: 38px;
+        left: 40px;
       }
       
       ::after {

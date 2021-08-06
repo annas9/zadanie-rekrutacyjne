@@ -19,13 +19,13 @@ export const timelineData = [
   },
   {
     title: 'Lorem ipsum dolor sit amet',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur nibh sapien, vitae pellentesque mi ornare et. Fusce tempor, ante in tristique ultricies, nisi urna lacinia risus, vel faucibus eros neque at tellus. In fermentum ligula quis lacus finibus faucibus.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur nibh sapien, vitae pellentesque mi ornare et. Fusce tempor, ante in tristique ultricies.',
     date: '2014-01-01T00:00:00',
     icon: 'icon-4.svg',
   },
   {
     title: 'Lorem ipsum dolor sit amet',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur nibh sapien, vitae pellentesque mi ornare et. Fusce tempor, ante in tristique ultricies, nisi urna lacinia risus, vel faucibus eros neque at tellus. In fermentum ligula quis lacus finibus faucibus.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur nibh sapien, vitae pellentesque mi ornare et. Fusce tempor.',
     date: '2015-01-01T00:00:00',
     icon: 'icon-5.svg',
   },
