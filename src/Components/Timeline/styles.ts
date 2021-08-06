@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 
   @media (max-width: 600px) {
     flex-direction: column;
-    padding: 30px 250px;
+    padding: 30px 0;
     min-height: 1024px;
   }
 `;
@@ -96,7 +96,7 @@ export const Box = styled.div`
 
       @media (max-width: 600px) {
         top: 38px;
-        left: 40px;
+        left: -86px;
       }
       
       ::after {

@@ -132,7 +132,7 @@ export const Tooltip = styled.div<TooltipProps>`
 
   @media (max-width: 600px) {
     top: 38px;
-    left: -205px;
+    left: -86px;
     bottom: auto;
     font-size: 14px;
     width: 172px;
